@@ -1,0 +1,33 @@
+# ── Dependencies ──────────────────────────────────
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# ── Environment ────────────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ── Build output ───────────────────────────────────
+client/dist/
+dist/
+
+# ── Uploads (stored on Cloudinary in production) ───
+server/uploads/*
+!server/uploads/.gitkeep
+
+# ── Logs ───────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ── OS / Editor ────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
