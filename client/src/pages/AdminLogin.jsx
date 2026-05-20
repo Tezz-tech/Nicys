@@ -40,10 +40,12 @@ export default function AdminLogin() {
       >
         {/* Logo */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-[#C8A4D4]/30 bg-[#C8A4D4]/10 mb-5">
-            <span className="font-display text-2xl font-semibold text-[#C8A4D4]">N</span>
-          </div>
-          <h1 className="font-display text-3xl font-semibold text-[#FFF8F0] mb-1">Nicys Studio</h1>
+          <img
+            src="/logo.png"
+            alt="Nicys"
+            className="h-20 w-auto object-contain mx-auto mb-5"
+            style={{ filter: 'brightness(0) invert(1)', maxWidth: '200px' }}
+          />
           <p className="font-body text-sm text-[#FFF8F0]/40 tracking-widest uppercase">Admin Portal</p>
         </div>
 

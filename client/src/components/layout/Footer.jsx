@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import InkDivider from '../ui/InkDivider'
-import WaxSeal    from '../ui/WaxSeal'
 
 const LINKS = [
   { path: '/',         label: 'Home' },
@@ -52,14 +51,6 @@ export default function Footer() {
       />
 
       {/* Wax seal top-center ornament */}
-      <motion.div
-        className="flex justify-center -mt-2 mb-6"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={inView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-        transition={{ delay: 0.1, duration: 0.55, ease: [0.34, 1.56, 0.64, 1] }}
-      >
-        <WaxSeal size={52} color="#2D6A4F" letter="N" />
-      </motion.div>
 
       <div className="max-w-6xl mx-auto px-6 md:px-16 pb-16">
         <motion.div

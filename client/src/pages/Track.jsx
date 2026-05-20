@@ -12,7 +12,7 @@ const STEPS = ['Received', 'In Progress', 'Complete', 'Delivered']
 const STEP_COLORS = {
   Received:      { seal: '#D4A5A5', label: 'Received'     },
   'In Progress': { seal: '#C8A4D4', label: 'In Progress'  },
-  Complete:      { seal: '#2D6A4F', label: 'Complete'     },
+  Complete:      { seal: '#8B1A2E', label: 'Complete'     },
   Delivered:     { seal: '#1B2A4A', label: 'Delivered'    },
 }
 
@@ -145,9 +145,8 @@ export default function Track() {
             >
               <form onSubmit={track} noValidate className="letter-card p-8 bg-cream ruled-bg space-y-6">
                 {/* Letterhead */}
-                <div className="pb-4 border-b border-midnight/8 flex items-center justify-between">
+                <div className="pb-4 border-b border-midnight/8">
                   <span className="font-display text-sm italic text-midnight/30">Track your order</span>
-                  <WaxSeal size={32} color="#C8A4D4" letter="N" />
                 </div>
 
                 <div>

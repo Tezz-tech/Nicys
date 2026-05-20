@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import api from '../lib/api'
 import InkDivider from '../components/ui/InkDivider'
-import WaxSeal    from '../components/ui/WaxSeal'
 
 const fade = { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: 0.5 } }
 const vp   = { once: false, amount: 0.2 }
@@ -96,11 +95,11 @@ export default function Contact() {
                   target="_blank" rel="noreferrer"
                   className="flex items-center gap-4"
                 >
-                  <div className="w-11 h-11 rounded-full bg-emerald/10 border border-emerald/30 flex items-center justify-center text-emerald font-semibold group-hover:bg-emerald group-hover:text-cream transition-all duration-300 text-sm">
+                  <div className="w-11 h-11 rounded-full bg-maroon/10 border border-maroon/30 flex items-center justify-center text-maroon font-semibold group-hover:bg-maroon group-hover:text-cream transition-all duration-300 text-sm">
                     WA
                   </div>
                   <div>
-                    <p className="font-body text-sm font-semibold text-midnight group-hover:text-emerald transition-colors">+234 800 000 0000</p>
+                    <p className="font-body text-sm font-semibold text-midnight group-hover:text-maroon transition-colors">+234 800 000 0000</p>
                     <p className="font-body text-xs font-medium text-midnight/40">Tap to open WhatsApp</p>
                   </div>
                 </a>
@@ -142,7 +141,6 @@ export default function Contact() {
               <div className="letter-card p-6 bg-cream">
                 <p className="form-label mb-3">Working Hours</p>
                 <div className="flex items-center gap-4">
-                  <WaxSeal size={40} color="#2D6A4F" letter="✦" />
                   <div>
                     <p className="font-display text-xl font-semibold text-midnight">7:00 AM – 11:00 PM</p>
                     <p className="font-body text-xs font-medium text-midnight/45 mt-0.5">Available every day of the week</p>
@@ -180,7 +178,7 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-20 px-8 letter-card bg-cream"
               >
-                <WaxSeal size={64} color="#2D6A4F" letter="✦" className="mx-auto mb-7" />
+                <div className="w-16 h-16 rounded-full bg-maroon/10 border border-maroon/20 flex items-center justify-center text-2xl text-maroon mx-auto mb-7">✦</div>
                 <h3 className="font-display text-3xl font-semibold text-midnight mb-3">Message received.</h3>
                 <p className="font-body text-sm font-medium text-midnight/55 leading-relaxed">
                   Thank you for reaching out. We'll be in touch within 24 hours.

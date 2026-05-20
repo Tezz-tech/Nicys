@@ -8,7 +8,7 @@ export default {
         cream:           '#FFFCF5',
         'cream-dark':    '#F5EBD8',
         'dusty-rose':    '#E8A0B4',
-        emerald:         '#2D6A4F',
+        emerald:         '#8B1A2E',
         'baby-pink':     '#FFC1D0',
         midnight:        '#0D1B38',
         'midnight-light':'#1A2D52',
@@ -35,7 +35,7 @@ export default {
       boxShadow: {
         'lavender': '0 4px 24px rgba(196, 168, 240, 0.30)',
         'ink':      '0 2px 16px rgba(13, 27, 56, 0.10)',
-        'wax':      '0 0 0 4px rgba(45, 106, 79, 0.15)',
+        'wax':      '0 0 0 4px rgba(139, 26, 46, 0.15)',
         'emboss':   '0 4px 14px rgba(13,27,56,0.12), 0 1px 4px rgba(13,27,56,0.08), inset 0 1px 0 rgba(255,255,255,0.18)',
         'lift':     '0 8px 28px rgba(13,27,56,0.16), 0 2px 8px rgba(13,27,56,0.10), inset 0 1px 0 rgba(255,255,255,0.18)',
       },
@@ -46,7 +46,7 @@ export default {
         shimmer:     { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
         stampIn:     { '0%': { transform: 'scale(1.5) rotate(-12deg)', opacity: '0' }, '60%': { transform: 'scale(0.95)', opacity: '1' }, '100%': { transform: 'scale(1)', opacity: '1' } },
         inkReveal:   { '0%': { clipPath: 'inset(0 100% 0 0)' }, '100%': { clipPath: 'inset(0 0% 0 0)' } },
-        waxPulse:    { '0%,100%': { boxShadow: '0 0 0 0 rgba(45,106,79,0.4)' }, '50%': { boxShadow: '0 0 0 8px rgba(45,106,79,0)' } },
+        waxPulse:    { '0%,100%': { boxShadow: '0 0 0 0 rgba(139,26,46,0.4)' }, '50%': { boxShadow: '0 0 0 8px rgba(139,26,46,0)' } },
       },
       animation: {
         'fade-in':   'fadeIn 1s ease-in-out',

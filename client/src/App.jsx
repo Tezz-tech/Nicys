@@ -17,6 +17,7 @@ import AdminOrderDetailPage from './pages/admin/AdminOrderDetailPage'
 import AdminMessagesPage    from './pages/admin/AdminMessagesPage'
 import { OrderProvider }    from './context/OrderContext'
 import { AdminProvider, useAdmin } from './context/AdminContext'
+import ScrollToTop          from './components/ui/ScrollToTop'
 
 function AdminGuard() {
   const { isAuthenticated } = useAdmin()
@@ -32,6 +33,7 @@ function AppInner() {
       {!isAdmin && <FloatingPetals />}
       {!isAdmin && <Navbar />}
 
+      <ScrollToTop />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           {/* Public routes */}

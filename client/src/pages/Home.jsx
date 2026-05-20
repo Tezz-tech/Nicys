@@ -3,7 +3,6 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import ParticleBackground from '../components/three/ParticleBackground'
 import FloatingEnvelope   from '../components/three/FloatingEnvelope'
 import InkDivider         from '../components/ui/InkDivider'
-import WaxSeal            from '../components/ui/WaxSeal'
 
 const fade = { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: 0.5 } }
 
@@ -19,7 +18,7 @@ const COLLECTIONS = [
   { name: 'Century of Love',     desc: 'For our Anniversary — celebrating the years.',           accent: '#E8A0B4' },
   { name: 'A Year of Heartfelt', desc: 'For a beautiful Birthday.',                              accent: '#FFC1D0' },
   { name: 'Grace & Lavender',    desc: 'Just thinking of you / Sympathy.',                      accent: '#C4A8F0' },
-  { name: 'A Note of a Note',    desc: 'For my mentor, boss, or colleague.',                    accent: '#2D6A4F' },
+  { name: 'A Note of a Note',    desc: 'For my mentor, boss, or colleague.',                    accent: '#8B1A2E' },
   { name: 'Sunshine Script',     desc: 'For a friend who needs a smile today.',                 accent: '#F0D060' },
   { name: 'Velvet & Vanilla',    desc: 'My Valentine — Special Edition.',                       accent: '#E8A0B4' },
 ]
@@ -331,7 +330,7 @@ export default function Home() {
             transition={{ duration: 0.9 }}
             viewport={{ once: false, amount: 0.4 }}
           >
-            <WaxSeal size={56} color="#2D6A4F" letter="N" className="mx-auto mb-10" />
+
             <p className="font-display text-2xl md:text-3xl font-light text-cream/80 italic leading-relaxed mb-8">
               "She read it three times. Each time, something new caught her breath.
               That's what a Nicys letter does — it doesn't just say the thing.

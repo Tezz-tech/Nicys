@@ -5,7 +5,6 @@ import Step2Collection from '../components/order/Step2Collection'
 import Step3Details    from '../components/order/Step3Details'
 import Step4Contact    from '../components/order/Step4Contact'
 import Step5Confirm    from '../components/order/Step5Confirm'
-import WaxSeal from '../components/ui/WaxSeal'
 
 const fade = { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: 0.5 } }
 
@@ -91,13 +90,6 @@ export default function Order() {
             >
               Begin your<br /><em className="italic text-lavender">heirloom letter.</em>
             </motion.h1>
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.6, type: 'spring' }}
-            >
-              <WaxSeal size={60} color="#1B2A4A" letter="N" />
-            </motion.div>
           </div>
         </div>
       </section>
