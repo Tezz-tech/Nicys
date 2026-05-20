@@ -10,8 +10,17 @@ const app = express()
 connectDB()
 
 // Middleware
+const allowedOrigins = [
+  (process.env.CLIENT_URL || '').replace(/\/$/, ''),
+  'http://localhost:3000',
+].filter(Boolean)
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: (origin, cb) => {
+    // allow server-to-server / curl / Postman (no origin header)
+    if (!origin || allowedOrigins.includes(origin)) return cb(null, true)
+    cb(new Error(`CORS: ${origin} not allowed`))
+  },
   credentials: true,
 }))
 app.use(express.json())

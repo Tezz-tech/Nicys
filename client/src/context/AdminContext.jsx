@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, useCallback } from 'react'
 import axios from 'axios'
 
+const BASE = import.meta.env.VITE_API_URL || ''
+
 const AdminContext = createContext(null)
 
 export function AdminProvider({ children }) {
@@ -17,6 +19,7 @@ export function AdminProvider({ children }) {
   }, [])
 
   const api = useCallback(() => axios.create({
+    baseURL: BASE,
     headers: { Authorization: `Bearer ${token}` },
   }), [token])
 

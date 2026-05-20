@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import axios from 'axios'
+import api from '../lib/api'
 import InkDivider from '../components/ui/InkDivider'
 import WaxSeal    from '../components/ui/WaxSeal'
 
@@ -84,7 +84,7 @@ export default function Track() {
     setErrors({})
     setStatus('loading')
     try {
-      const { data } = await axios.get(`/api/orders/${form.orderId.trim()}`, {
+      const { data } = await api.get(`/api/orders/${form.orderId.trim()}`, {
         params: { email: form.email.trim() },
       })
       setOrder(data)

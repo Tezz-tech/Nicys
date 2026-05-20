@@ -4,14 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        lavender:        '#C8A4D4',
-        cream:           '#FFF8F0',
-        'cream-dark':    '#F0E6D6',
-        'dusty-rose':    '#D4A5A5',
+        lavender:        '#C4A8F0',
+        cream:           '#FFFCF5',
+        'cream-dark':    '#F5EBD8',
+        'dusty-rose':    '#E8A0B4',
         emerald:         '#2D6A4F',
-        'baby-pink':     '#F4C2C2',
-        midnight:        '#1B2A4A',
-        'midnight-light':'#243558',
+        'baby-pink':     '#FFC1D0',
+        midnight:        '#0D1B38',
+        'midnight-light':'#1A2D52',
+        maroon:          '#8B1A2E',
         sepia:           '#8B7355',
         'sepia-light':   '#C4A882',
       },
@@ -32,9 +33,11 @@ export default {
         'micro':    '0.35em',
       },
       boxShadow: {
-        'lavender': '0 4px 24px rgba(200, 164, 212, 0.25)',
-        'ink':      '0 2px 16px rgba(27, 42, 74, 0.08)',
+        'lavender': '0 4px 24px rgba(196, 168, 240, 0.30)',
+        'ink':      '0 2px 16px rgba(13, 27, 56, 0.10)',
         'wax':      '0 0 0 4px rgba(45, 106, 79, 0.15)',
+        'emboss':   '0 4px 14px rgba(13,27,56,0.12), 0 1px 4px rgba(13,27,56,0.08), inset 0 1px 0 rgba(255,255,255,0.18)',
+        'lift':     '0 8px 28px rgba(13,27,56,0.16), 0 2px 8px rgba(13,27,56,0.10), inset 0 1px 0 rgba(255,255,255,0.18)',
       },
       keyframes: {
         fadeIn:      { '0%': { opacity: '0' }, '100%': { opacity: '1' } },

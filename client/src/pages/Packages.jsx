@@ -52,8 +52,7 @@ function CollectionCard({ c, i }) {
         <div className="w-6 h-px mb-4" style={{ background: c.mood }} />
         <p className="font-body text-sm font-medium text-midnight/60 leading-relaxed mb-6 flex-1">{c.desc}</p>
 
-        <div className="flex items-center justify-between pt-5 border-t border-midnight/8">
-          <span className="font-display text-lg text-midnight/75">{c.priceRange}</span>
+        <div className="flex items-center justify-end pt-5 border-t border-midnight/8">
           <Link
             to={`/order?collection=${c.id}`}
             className="font-body text-[11px] tracking-widest uppercase font-semibold text-midnight/45 hover:text-lavender transition-colors group-hover:translate-x-1 inline-block transition-transform duration-300"

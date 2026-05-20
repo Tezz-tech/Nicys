@@ -14,14 +14,14 @@ const reveal = (delay = 0) => ({
 })
 
 const COLLECTIONS = [
-  { name: 'Lavender & Longing',  desc: 'Long-distance love',     accent: '#C8A4D4' },
-  { name: 'Midnight Letter',     desc: 'Intimate & moody',        accent: '#1B2A4A' },
-  { name: 'Century of Love',     desc: 'Anniversaries',           accent: '#D4A5A5' },
-  { name: 'A Year of Heartfelt', desc: 'Birthdays',               accent: '#F4C2C2' },
-  { name: 'Grace & Lavender',    desc: 'Thinking of you',         accent: '#C8A4D4' },
-  { name: 'A Note of a Note',    desc: 'Mentors & colleagues',    accent: '#2D6A4F' },
-  { name: 'Sunshine Script',     desc: 'Friends & joy',           accent: '#F0D060' },
-  { name: 'Velvet & Vanilla',    desc: "Valentine's Day",         accent: '#D4A5A5' },
+  { name: 'Lavender & Longing',  desc: 'For my love who is far away.',                          accent: '#C4A8F0' },
+  { name: 'Midnight Letter',     desc: 'For an intimate, moody, and deep expression of love.',   accent: '#0D1B38' },
+  { name: 'Century of Love',     desc: 'For our Anniversary — celebrating the years.',           accent: '#E8A0B4' },
+  { name: 'A Year of Heartfelt', desc: 'For a beautiful Birthday.',                              accent: '#FFC1D0' },
+  { name: 'Grace & Lavender',    desc: 'Just thinking of you / Sympathy.',                      accent: '#C4A8F0' },
+  { name: 'A Note of a Note',    desc: 'For my mentor, boss, or colleague.',                    accent: '#2D6A4F' },
+  { name: 'Sunshine Script',     desc: 'For a friend who needs a smile today.',                 accent: '#F0D060' },
+  { name: 'Velvet & Vanilla',    desc: 'My Valentine — Special Edition.',                       accent: '#E8A0B4' },
 ]
 
 export default function Home() {

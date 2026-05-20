@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import axios from 'axios'
+import api from '../lib/api'
 import { useAdmin } from '../context/AdminContext'
 
 export default function AdminLogin() {
@@ -16,7 +16,7 @@ export default function AdminLogin() {
     setError('')
     setLoading(true)
     try {
-      const { data } = await axios.post('/api/admin/login', form)
+      const { data } = await api.post('/api/admin/login', form)
       login(data.token)
       navigate('/admin', { replace: true })
     } catch (err) {

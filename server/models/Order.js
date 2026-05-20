@@ -7,22 +7,43 @@ const statusEntrySchema = new mongoose.Schema({
 }, { _id: false })
 
 const orderSchema = new mongoose.Schema({
-  orderId:             { type: String, required: true, unique: true, index: true },
-  senderName:          { type: String, required: true, trim: true },
-  senderEmail:         { type: String, required: true, trim: true, lowercase: true },
-  senderPhone:         { type: String, required: true, trim: true },
-  recipientName:       { type: String, required: true, trim: true },
-  recipientEmail:      { type: String, trim: true, lowercase: true, default: '' },
-  occasion:            { type: String, required: true },
-  letterCollection:    { type: String, required: true },
-  tier:                { type: String, enum: ['scribe', 'designer'], required: true },
-  serviceType:         { type: String, enum: ['digital', 'physical'], required: true },
-  message:             { type: String, required: true },
-  deliveryDate:        { type: Date },
-  addons:              { type: [String], default: [] },
-  specialInstructions: { type: String, default: '' },
-  deliveryAddress:     { type: String, default: '' },
-  paymentProofUrl:     { type: String, default: '' },
+  orderId:            { type: String, required: true, unique: true, index: true },
+
+  // Sender
+  senderName:         { type: String, required: true, trim: true },
+  senderEmail:        { type: String, required: true, trim: true, lowercase: true },
+  senderPhone:        { type: String, required: true, trim: true },
+
+  // Recipient
+  recipientName:      { type: String, required: true, trim: true },
+  recipientEmail:     { type: String, trim: true, lowercase: true, default: '' },
+
+  // Order identity
+  letterCollection:   { type: String, required: true },
+  tier:               { type: String, enum: ['scribe', 'designer'], required: true },
+  format:             { type: String, enum: ['pocket-hug', 'heartfelt-heirloom', 'cinematic-scribe'], default: '' },
+
+  // Content — designer path
+  designerMessage:    { type: String, default: '' },
+
+  // Content — scribe path
+  littleThings:       { type: String, default: '' },
+  coreMemory:         { type: String, default: '' },
+  unspoken:           { type: String, default: '' },
+
+  // Legacy combined message field (kept for backward compat)
+  message:            { type: String, default: '' },
+
+  // Final details
+  signature:          { type: String, default: '' },
+  deliveryDate:       { type: Date },
+  deliveryAddress:    { type: String, default: '' },
+
+  // Uploaded files (Cloudinary URLs)
+  letterImages:       { type: [String], default: [] },
+  paymentProofUrl:    { type: String, default: '' },
+
+  // Status
   status: {
     type:    String,
     enum:    ['Received', 'In Progress', 'Complete', 'Delivered'],

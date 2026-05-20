@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useAdmin } from '../../context/AdminContext'
 
 const STATUS_OPTIONS = ['Received', 'In Progress', 'Complete', 'Delivered']
@@ -29,7 +29,6 @@ export default function OrderDetail({ order, onClose, onStatusUpdated }) {
   const [note, setNote]           = useState('')
   const [saving, setSaving]       = useState(false)
   const [error, setError]         = useState('')
-  const [imgOpen, setImgOpen]     = useState(false)
 
   const handleUpdate = async () => {
     if (newStatus === order.status && !note.trim()) return
@@ -119,50 +118,90 @@ export default function OrderDetail({ order, onClose, onStatusUpdated }) {
             <h3 className="font-body text-xs font-semibold tracking-widest uppercase text-[#C8A4D4]/60 mb-4">Order Details</h3>
             <div className="bg-[#0d1627]/50 rounded-sm p-4">
               <Row label="Collection"  value={order.letterCollection} />
-              <Row label="Service"     value={order.serviceType === 'physical' ? 'Physical Gift Box' : 'Digital Letter'} />
-              <Row label="Tier"        value={order.tier === 'scribe' ? 'Scribe (Standard)' : 'Designer (Premium)'} />
-              <Row label="Addons"      value={order.addons?.length ? order.addons.join(', ') : null} />
+              <Row label="Tier"        value={order.tier === 'scribe' ? "Scribe's Tier" : "Designer's Tier"} />
+              <Row label="Format"      value={order.format} />
+              <Row label="Signature"   value={order.signature} />
               <Row label="Delivery"    value={fmt(order.deliveryDate)} />
             </div>
           </section>
 
-          {/* Message */}
-          {order.message && (
+          {/* Designer message */}
+          {order.tier === 'designer' && order.designerMessage && (
             <section>
-              <h3 className="font-body text-xs font-semibold tracking-widest uppercase text-[#C8A4D4]/60 mb-4">Message</h3>
+              <h3 className="font-body text-xs font-semibold tracking-widest uppercase text-[#C8A4D4]/60 mb-4">Designer's Message</h3>
               <div className="bg-[#0d1627]/50 rounded-sm p-4">
-                <p className="font-body text-sm text-[#FFF8F0]/70 leading-relaxed whitespace-pre-wrap">{order.message}</p>
+                <p className="font-body text-sm text-[#FFF8F0]/70 leading-relaxed whitespace-pre-wrap">{order.designerMessage}</p>
               </div>
             </section>
           )}
 
-          {/* Special instructions */}
-          {order.specialInstructions && (
+          {/* Scribe prompts */}
+          {order.tier === 'scribe' && (
             <section>
-              <h3 className="font-body text-xs font-semibold tracking-widest uppercase text-[#C8A4D4]/60 mb-4">Special Instructions</h3>
-              <div className="bg-[#0d1627]/50 rounded-sm p-4">
-                <p className="font-body text-sm text-[#FFF8F0]/70 leading-relaxed">{order.specialInstructions}</p>
+              <h3 className="font-body text-xs font-semibold tracking-widest uppercase text-[#C8A4D4]/60 mb-4">Scribe Prompts</h3>
+              <div className="bg-[#0d1627]/50 rounded-sm p-4 space-y-4">
+                {order.littleThings && (
+                  <div>
+                    <p className="font-body text-[10px] tracking-widest uppercase text-[#C8A4D4]/50 mb-1">The Little Things</p>
+                    <p className="font-body text-sm text-[#FFF8F0]/70 leading-relaxed whitespace-pre-wrap">{order.littleThings}</p>
+                  </div>
+                )}
+                {order.coreMemory && (
+                  <div>
+                    <p className="font-body text-[10px] tracking-widest uppercase text-[#C8A4D4]/50 mb-1">The Core Memory</p>
+                    <p className="font-body text-sm text-[#FFF8F0]/70 leading-relaxed whitespace-pre-wrap">{order.coreMemory}</p>
+                  </div>
+                )}
+                {order.unspoken && (
+                  <div>
+                    <p className="font-body text-[10px] tracking-widest uppercase text-[#C8A4D4]/50 mb-1">The Unspoken</p>
+                    <p className="font-body text-sm text-[#FFF8F0]/70 leading-relaxed whitespace-pre-wrap">{order.unspoken}</p>
+                  </div>
+                )}
               </div>
             </section>
           )}
 
-          {/* Payment Proof */}
-          {order.paymentProofUrl && (
+          {/* Uploaded Letter Images */}
+          {order.letterImages?.length > 0 && (
             <section>
-              <h3 className="font-body text-xs font-semibold tracking-widest uppercase text-[#C8A4D4]/60 mb-4">Payment Proof</h3>
-              <button
-                onClick={() => setImgOpen(true)}
-                className="block w-full rounded-sm overflow-hidden border border-[#C8A4D4]/20 hover:border-[#C8A4D4]/50 transition-colors"
-              >
-                <img
-                  src={order.paymentProofUrl}
-                  alt="Payment proof"
-                  className="w-full max-h-64 object-contain bg-[#0d1627]"
-                />
-                <p className="font-body text-xs text-[#C8A4D4]/50 text-center py-2 bg-[#0d1627]/70">
-                  Click to expand
-                </p>
-              </button>
+              <h3 className="font-body text-xs font-semibold tracking-widest uppercase text-[#C8A4D4]/60 mb-4">
+                Uploaded Files ({order.letterImages.length})
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {order.letterImages.map((url, i) => {
+                  const isPdf = url.toLowerCase().includes('.pdf') || url.includes('/raw/')
+                  return (
+                    <a
+                      key={i}
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block rounded-sm overflow-hidden border border-[#C8A4D4]/20 hover:border-[#C8A4D4]/50 transition-colors group"
+                    >
+                      {isPdf ? (
+                        <div className="flex flex-col items-center justify-center bg-[#0d1627] py-8 px-4 text-center">
+                          <span className="text-3xl text-[#C8A4D4]/50 mb-2">▣</span>
+                          <p className="font-body text-xs text-[#C8A4D4]/50 group-hover:text-[#C8A4D4] transition-colors">
+                            Document {i + 1} — Click to open
+                          </p>
+                        </div>
+                      ) : (
+                        <div>
+                          <img
+                            src={url}
+                            alt={`Upload ${i + 1}`}
+                            className="w-full h-32 object-cover bg-[#0d1627]"
+                          />
+                          <p className="font-body text-xs text-[#C8A4D4]/50 text-center py-1.5 bg-[#0d1627]/70 group-hover:text-[#C8A4D4] transition-colors">
+                            Image {i + 1}
+                          </p>
+                        </div>
+                      )}
+                    </a>
+                  )
+                })}
+              </div>
             </section>
           )}
 
@@ -231,24 +270,6 @@ export default function OrderDetail({ order, onClose, onStatusUpdated }) {
         </div>
       </motion.aside>
 
-      {/* Image lightbox */}
-      <AnimatePresence>
-        {imgOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setImgOpen(false)}
-            className="fixed inset-0 bg-black/90 z-[60] flex items-center justify-center p-8 cursor-zoom-out"
-          >
-            <img
-              src={order.paymentProofUrl}
-              alt="Payment proof full"
-              className="max-w-full max-h-full object-contain rounded-sm"
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   )
 }

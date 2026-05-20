@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import axios from 'axios'
+import api from '../lib/api'
 import InkDivider from '../components/ui/InkDivider'
 import WaxSeal    from '../components/ui/WaxSeal'
 
@@ -27,7 +27,7 @@ export default function Contact() {
     setErrors({})
     setStatus('sending')
     try {
-      await axios.post('/api/contact', form)
+      await api.post('/api/contact', form)
       setStatus('success')
       setForm({ name: '', email: '', message: '' })
     } catch { setStatus('error') }
@@ -127,12 +127,12 @@ export default function Contact() {
               {/* Email */}
               <div className="group letter-card p-6 bg-cream transition-shadow duration-300 hover:shadow-md">
                 <p className="form-label mb-3">Email</p>
-                <a href="mailto:hello@nicys.ng" className="flex items-center gap-4">
+                <a href="mailto:nicysletters@gmail.com" className="flex items-center gap-4">
                   <div className="w-11 h-11 rounded-full bg-dusty-rose/10 border border-dusty-rose/30 flex items-center justify-center text-dusty-rose font-semibold group-hover:bg-dusty-rose group-hover:text-cream transition-all duration-300 text-xs">
                     @
                   </div>
                   <div>
-                    <p className="font-body text-sm font-semibold text-midnight group-hover:text-dusty-rose transition-colors">hello@nicys.ng</p>
+                    <p className="font-body text-sm font-semibold text-midnight group-hover:text-dusty-rose transition-colors">nicysletters@gmail.com</p>
                     <p className="font-body text-xs font-medium text-midnight/40">We reply within 24 hours</p>
                   </div>
                 </a>

@@ -39,11 +39,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" className="group flex flex-col items-start">
-          <span className="font-display text-2xl font-semibold text-midnight tracking-[0.25em] group-hover:text-lavender transition-colors duration-400">
-            Nicys
-          </span>
-          <span className="h-px w-0 group-hover:w-full bg-gradient-to-r from-lavender to-dusty-rose transition-all duration-500 ease-out" />
+        <Link to="/" className="group flex items-center">
+          <img
+            src="/logo.png"
+            alt="Nicys"
+            className="h-24 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
+            style={{ maxWidth: '260px' }}
+          />
         </Link>
 
         {/* Desktop nav */}

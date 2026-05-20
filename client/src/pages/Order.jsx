@@ -9,7 +9,7 @@ import WaxSeal from '../components/ui/WaxSeal'
 
 const fade = { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, transition: { duration: 0.5 } }
 
-const STEP_LABELS = ['Service', 'Collection', 'Details', 'Contact & Pay', 'Confirmation']
+const STEP_LABELS = ['Occasion', 'Your Voice', 'The Letter', 'Final Details', 'Confirmation']
 
 function StepIndicator({ step }) {
   return (

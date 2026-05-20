@@ -70,7 +70,12 @@ export default function Footer() {
         >
           {/* Brand */}
           <motion.div variants={slideLeft}>
-            <h3 className="font-display text-4xl font-semibold text-cream tracking-[0.2em] mb-1">Nicys</h3>
+            <img
+              src="/logo.png"
+              alt="Nicys"
+              className="h-28 w-auto object-contain mb-4"
+              style={{ maxWidth: '280px', filter: 'brightness(0) invert(1)' }}
+            />
             <p className="font-body text-xs text-lavender tracking-widest italic mb-6 font-medium">
               Helping you say what matters most
             </p>
@@ -131,7 +136,7 @@ export default function Footer() {
               {[
                 { href: 'https://wa.me/2348000000000', label: 'WhatsApp', sub: 'Primary channel' },
                 { href: 'https://instagram.com/nicys.ng', label: '@nicys.ng', sub: 'Instagram' },
-                { href: 'mailto:hello@nicys.ng', label: 'hello@nicys.ng', sub: 'Email' },
+                { href: 'mailto:nicysletters@gmail.com', label: 'nicysletters@gmail.com', sub: 'Email' },
               ].map(({ href, label, sub }) => (
                 <a
                   key={label}
