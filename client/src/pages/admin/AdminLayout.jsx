@@ -17,10 +17,10 @@ export default function AdminLayout() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0d1627] flex flex-col">
+    <div className="min-h-screen bg-[#0d0000] flex flex-col">
 
       {/* ── Top Nav ── */}
-      <header className="sticky top-0 z-30 bg-[#0d1627]/95 backdrop-blur-sm border-b border-[#C4A8F0]/12">
+      <header className="sticky top-0 z-30 bg-[#0d0000]/95 backdrop-blur-sm border-b border-[#800000]/12">
         <div className="max-w-7xl mx-auto px-6 py-0 flex items-center gap-8 h-16">
 
           {/* Logo */}
@@ -43,7 +43,7 @@ export default function AdminLayout() {
                 className={({ isActive }) =>
                   `font-body text-xs font-semibold tracking-widest uppercase px-4 py-2 rounded-sm transition-all duration-200 ${
                     isActive
-                      ? 'bg-[#C4A8F0]/15 text-[#C4A8F0]'
+                      ? 'bg-[#800000]/15 text-[#800000]'
                       : 'text-[#FFF8F0]/40 hover:text-[#FFF8F0]/70 hover:bg-[#FFF8F0]/5'
                   }`
                 }

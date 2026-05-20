@@ -8,7 +8,7 @@ const TIERS = [
     sub:     "The Designer's Tier",
     icon:    '◈',
     desc:    "You've already written your heart out. Our team will perform a light Polishing & Grammar Check to ensure your message shines perfectly in its new home.",
-    accent:  '#C4A8F0',
+    accent:  '#800000',
   },
   {
     value:   'scribe',
@@ -50,7 +50,7 @@ export default function Step2Collection() {
               }`}
               style={{
                 boxShadow: selected
-                  ? '0 8px 28px rgba(196,168,240,0.22), inset 0 1px 0 rgba(255,255,255,0.55)'
+                  ? '0 8px 28px rgba(128,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.55)'
                   : '0 3px 12px rgba(13,27,56,0.06), inset 0 1px 0 rgba(255,255,255,0.65)',
               }}
             >

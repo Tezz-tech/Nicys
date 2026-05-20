@@ -31,7 +31,7 @@ export default function AdminMessagesPage() {
       </div>
 
       {!loading && contacts.length === 0 && (
-        <div className="bg-[#1B2A4A] border border-[#C4A8F0]/12 rounded-sm p-12 text-center">
+        <div className="bg-[#1a0a0a] border border-[#800000]/12 rounded-sm p-12 text-center">
           <p className="font-body text-sm text-[#FFF8F0]/30">No contact messages yet.</p>
         </div>
       )}
@@ -43,14 +43,14 @@ export default function AdminMessagesPage() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.04 }}
-            className="bg-[#1B2A4A] border border-[#C4A8F0]/12 rounded-sm overflow-hidden"
+            className="bg-[#1a0a0a] border border-[#800000]/12 rounded-sm overflow-hidden"
           >
             <button
               onClick={() => setExpanded(expanded === c._id ? null : c._id)}
-              className="w-full flex items-center gap-4 px-6 py-4 hover:bg-[#C4A8F0]/5 transition-colors text-left"
+              className="w-full flex items-center gap-4 px-6 py-4 hover:bg-[#800000]/5 transition-colors text-left"
             >
-              <div className="w-10 h-10 rounded-full bg-[#C4A8F0]/15 flex items-center justify-center shrink-0">
-                <span className="font-display text-sm font-semibold text-[#C4A8F0]">{c.name[0].toUpperCase()}</span>
+              <div className="w-10 h-10 rounded-full bg-[#800000]/15 flex items-center justify-center shrink-0">
+                <span className="font-display text-sm font-semibold text-[#800000]">{c.name[0].toUpperCase()}</span>
               </div>
               <div className="flex-1 min-w-0">
                 <p className="font-body text-sm font-semibold text-[#FFF8F0]/80">{c.name}</p>
@@ -68,11 +68,11 @@ export default function AdminMessagesPage() {
                   exit={{ height: 0 }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-6 pt-1 border-t border-[#C4A8F0]/8">
+                  <div className="px-6 pb-6 pt-1 border-t border-[#800000]/8">
                     <p className="font-body text-sm text-[#FFF8F0]/70 leading-relaxed whitespace-pre-wrap mb-4">{c.message}</p>
                     <a
                       href={`mailto:${c.email}`}
-                      className="inline-block font-body text-xs font-semibold tracking-widest uppercase text-[#C4A8F0] hover:text-[#b490e8] transition-colors"
+                      className="inline-block font-body text-xs font-semibold tracking-widest uppercase text-[#800000] hover:text-[#b490e8] transition-colors"
                     >
                       Reply via Email →
                     </a>

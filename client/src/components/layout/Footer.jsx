@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+﻿import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useInView } from 'framer-motion'
 import InkDivider from '../ui/InkDivider'
@@ -45,7 +45,7 @@ export default function Footer() {
       <div
         className="absolute inset-0 pointer-events-none opacity-5"
         style={{
-          backgroundImage: 'repeating-linear-gradient(transparent, transparent 31px, rgba(200,164,212,0.3) 32px)',
+          backgroundImage: 'repeating-linear-gradient(transparent, transparent 31px, rgba(128,0,0,0.3) 32px)',
           backgroundSize: '100% 32px',
         }}
       />
@@ -146,7 +146,7 @@ export default function Footer() {
 
               <div className="mt-4 pt-4 border-t border-cream/10">
                 <p className="font-body text-xs font-semibold text-cream/50 leading-relaxed">
-                  Available daily<br />7:00 AM – 11:00 PM
+                  Available daily<br />7:00 AM — 11:00 PM
                 </p>
                 <p className="font-body text-xs text-cream/30 mt-2">
                   Physical delivery: Abuja only

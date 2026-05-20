@@ -29,7 +29,7 @@ function AppInner() {
   const isAdmin  = location.pathname.startsWith('/admin')
 
   return (
-    <div className={`relative min-h-screen overflow-x-hidden ${isAdmin ? 'bg-[#0d1627] admin-area' : 'bg-cream'}`}>
+    <div className={`relative min-h-screen overflow-x-hidden ${isAdmin ? 'bg-[#0d0000] admin-area' : 'bg-cream'}`}>
       {!isAdmin && <FloatingPetals />}
       {!isAdmin && <Navbar />}
 

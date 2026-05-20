@@ -65,7 +65,7 @@ export default function Order() {
       <section className="pt-36 pb-0 px-6 md:px-16 sepia-section relative overflow-hidden">
         <div
           className="absolute top-0 right-0 w-96 h-96 opacity-15 blur-3xl pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #C8A4D4, transparent)' }}
+          style={{ background: 'radial-gradient(circle, #800000, transparent)' }}
         />
         {/* Large watermark */}
         <div className="absolute right-0 bottom-0 font-display text-[18rem] font-bold text-midnight/[0.02] pointer-events-none select-none leading-none" aria-hidden>O</div>

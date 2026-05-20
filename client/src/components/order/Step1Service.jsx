@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import { useOrder } from '../../context/OrderContext'
 
 const COLLECTIONS = [
-  { id: 'lavender-longing',  name: 'Lavender and Longing',  desc: 'For my love who is far away.',                          accent: '#C4A8F0' },
-  { id: 'midnight-letter',   name: 'Midnight Letter',        desc: 'For an intimate, moody, and deep expression of love.',   accent: '#0D1B38' },
+  { id: 'lavender-longing',  name: 'Lavender and Longing',  desc: 'For my love who is far away.',                          accent: '#800000' },
+  { id: 'midnight-letter',   name: 'Midnight Letter',        desc: 'For an intimate, moody, and deep expression of love.',   accent: '#800000' },
   { id: 'century-of-love',   name: 'Century of Love',        desc: 'For our Anniversary (celebrating the years).',           accent: '#E8A0B4' },
   { id: 'year-of-heartfelt', name: 'A Year of Heartfelt',   desc: 'For a beautiful Birthday.',                              accent: '#FFC1D0' },
-  { id: 'grace-lavender',    name: 'Grace and Lavender',     desc: 'Just thinking of you / Sympathy.',                      accent: '#C4A8F0' },
-  { id: 'note-of-a-note',    name: 'A Note of a Note',       desc: 'For my mentor, boss, or colleague.',                    accent: '#8B1A2E' },
+  { id: 'grace-lavender',    name: 'Grace and Lavender',     desc: 'Just thinking of you / Sympathy.',                      accent: '#800000' },
+  { id: 'note-of-a-note',    name: 'A Note of a Note',       desc: 'For my mentor, boss, or colleague.',                    accent: '#800000' },
   { id: 'sunshine-script',   name: 'Sunshine Script',        desc: 'For a friend who needs a smile today.',                 accent: '#D4A820' },
   { id: 'velvet-vanilla',    name: 'Velvet and Vanilla',     desc: 'My Valentine (Special Edition).',                       accent: '#E8A0B4' },
 ]

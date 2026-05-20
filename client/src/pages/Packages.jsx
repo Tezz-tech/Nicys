@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { COLLECTIONS, GIFT_BOXES, ADDONS } from '../data/collections'
 import InkDivider from '../components/ui/InkDivider'
@@ -69,11 +69,11 @@ export default function Packages() {
   return (
     <motion.div {...fade}>
 
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
+      {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="pt-36 pb-24 px-6 md:px-16 sepia-section relative overflow-hidden">
         <div
           className="absolute top-0 right-0 w-[600px] h-[600px] opacity-20 blur-3xl pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #C8A4D4, transparent)' }}
+          style={{ background: 'radial-gradient(circle, #800000, transparent)' }}
         />
         {/* Big watermark */}
         <div className="absolute left-0 bottom-0 font-display text-[20rem] font-bold text-midnight/[0.018] pointer-events-none select-none leading-none" aria-hidden>C</div>
@@ -101,7 +101,7 @@ export default function Packages() {
         </div>
       </section>
 
-      {/* ── COLLECTIONS GRID ─────────────────────────────────────────── */}
+      {/* â”€â”€ COLLECTIONS GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section-padding bg-cream">
         <div className="max-w-6xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -112,12 +112,12 @@ export default function Packages() {
 
       <InkDivider className="bg-cream px-16 pb-4" />
 
-      {/* ── GIFT BOXES ───────────────────────────────────────────────── */}
+      {/* â”€â”€ GIFT BOXES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section-padding bg-midnight relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.07]"
-          style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(200,164,212,0.5) 40px)', backgroundSize: '100% 40px' }} />
+          style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(128,0,0,0.5) 40px)', backgroundSize: '100% 40px' }} />
         <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(200,164,212,0.07), transparent 60%)' }} />
+          style={{ background: 'radial-gradient(ellipse at 30% 50%, rgba(128,0,0,0.07), transparent 60%)' }} />
 
         <div className="max-w-5xl mx-auto relative">
           <motion.div
@@ -194,7 +194,7 @@ export default function Packages() {
         </div>
       </section>
 
-      {/* ── ADD-ONS ──────────────────────────────────────────────────── */}
+      {/* â”€â”€ ADD-ONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section-padding sepia-section relative overflow-hidden">
         <div className="absolute right-0 top-0 font-display text-[18rem] font-bold text-midnight/[0.018] pointer-events-none select-none leading-none" aria-hidden>+</div>
 

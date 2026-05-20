@@ -11,9 +11,9 @@ const STEPS = ['Received', 'In Progress', 'Complete', 'Delivered']
 
 const STEP_COLORS = {
   Received:      { seal: '#D4A5A5', label: 'Received'     },
-  'In Progress': { seal: '#C8A4D4', label: 'In Progress'  },
-  Complete:      { seal: '#8B1A2E', label: 'Complete'     },
-  Delivered:     { seal: '#1B2A4A', label: 'Delivered'    },
+  'In Progress': { seal: '#800000', label: 'In Progress'  },
+  Complete:      { seal: '#800000', label: 'Complete'     },
+  Delivered:     { seal: '#800000', label: 'Delivered'    },
 }
 
 function StatusTimeline({ currentStatus }) {
@@ -215,7 +215,7 @@ export default function Track() {
                 >
                   <WaxSeal
                     size={52}
-                    color={STEP_COLORS[order.status]?.seal || '#C8A4D4'}
+                    color={STEP_COLORS[order.status]?.seal || '#800000'}
                     letter={order.status[0]}
                   />
                 </motion.div>

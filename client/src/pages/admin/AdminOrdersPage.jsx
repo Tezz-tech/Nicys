@@ -7,7 +7,7 @@ const STATUS_STYLES = {
   'Received':    'bg-amber-500/15 text-amber-300 border border-amber-400/25',
   'In Progress': 'bg-blue-500/15 text-blue-300 border border-blue-400/25',
   'Complete':    'bg-emerald-500/15 text-emerald-300 border border-emerald-400/25',
-  'Delivered':   'bg-[#C4A8F0]/15 text-[#C4A8F0] border border-[#C4A8F0]/25',
+  'Delivered':   'bg-[#800000]/15 text-[#800000] border border-[#800000]/25',
 }
 
 const STATUS_OPTIONS = ['', 'Received', 'In Progress', 'Complete', 'Delivered']
@@ -56,12 +56,12 @@ export default function AdminOrdersPage() {
           placeholder="Search by ID, name or email…"
           value={search}
           onChange={e => { setSearch(e.target.value); setPage(1) }}
-          className="flex-1 bg-[#1B2A4A] border border-[#C4A8F0]/20 rounded-sm px-4 py-2.5 font-body text-sm text-[#FFF8F0]/80 placeholder-[#FFF8F0]/25 focus:outline-none focus:border-[#C4A8F0]/50 transition-colors"
+          className="flex-1 bg-[#1a0a0a] border border-[#800000]/20 rounded-sm px-4 py-2.5 font-body text-sm text-[#FFF8F0]/80 placeholder-[#FFF8F0]/25 focus:outline-none focus:border-[#800000]/50 transition-colors"
         />
         <select
           value={statusFilter}
           onChange={e => { setStatus(e.target.value); setPage(1) }}
-          className="bg-[#1B2A4A] border border-[#C4A8F0]/20 rounded-sm px-4 py-2.5 font-body text-sm text-[#FFF8F0]/70 focus:outline-none focus:border-[#C4A8F0]/50 transition-colors"
+          className="bg-[#1a0a0a] border border-[#800000]/20 rounded-sm px-4 py-2.5 font-body text-sm text-[#FFF8F0]/70 focus:outline-none focus:border-[#800000]/50 transition-colors"
         >
           {STATUS_OPTIONS.map(s => (
             <option key={s} value={s}>{s || 'All Statuses'}</option>
@@ -70,9 +70,9 @@ export default function AdminOrdersPage() {
       </div>
 
       {/* Table */}
-      <div className="bg-[#1B2A4A] border border-[#C4A8F0]/12 rounded-sm overflow-hidden">
+      <div className="bg-[#1a0a0a] border border-[#800000]/12 rounded-sm overflow-hidden">
         {/* Header */}
-        <div className="hidden md:grid grid-cols-[140px_1fr_1fr_120px_120px_36px] gap-4 px-5 py-3 border-b border-[#C4A8F0]/12 bg-[#0d1627]/40">
+        <div className="hidden md:grid grid-cols-[140px_1fr_1fr_120px_120px_36px] gap-4 px-5 py-3 border-b border-[#800000]/12 bg-[#0d0000]/40">
           {['Order ID', 'Customer', 'Recipient', 'Date', 'Status', ''].map(h => (
             <span key={h} className="font-body text-[10px] font-semibold tracking-widest uppercase text-[#FFF8F0]/30">{h}</span>
           ))}
@@ -86,9 +86,9 @@ export default function AdminOrdersPage() {
           <motion.div key={o._id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.02 }}>
             <Link
               to={`/admin/orders/${o.orderId}`}
-              className="flex md:grid md:grid-cols-[140px_1fr_1fr_120px_120px_36px] gap-4 px-5 py-4 border-b border-[#C4A8F0]/8 last:border-0 hover:bg-[#C4A8F0]/5 transition-colors group items-center"
+              className="flex md:grid md:grid-cols-[140px_1fr_1fr_120px_120px_36px] gap-4 px-5 py-4 border-b border-[#800000]/8 last:border-0 hover:bg-[#800000]/5 transition-colors group items-center"
             >
-              <span className="font-body text-xs font-bold tracking-wider text-[#C4A8F0]">{o.orderId}</span>
+              <span className="font-body text-xs font-bold tracking-wider text-[#800000]">{o.orderId}</span>
               <div className="min-w-0 flex-1 md:flex-none">
                 <p className="font-body text-sm text-[#FFF8F0]/80 truncate">{o.senderName}</p>
                 <p className="font-body text-xs text-[#FFF8F0]/35 truncate">{o.senderEmail}</p>
@@ -101,7 +101,7 @@ export default function AdminOrdersPage() {
               <span className={`font-body text-[10px] font-semibold tracking-widest uppercase px-2.5 py-1 rounded-full ${STATUS_STYLES[o.status] || 'bg-white/10 text-white/50'}`}>
                 {o.status}
               </span>
-              <span className="text-[#FFF8F0]/20 group-hover:text-[#C4A8F0]/60 transition-colors text-lg">›</span>
+              <span className="text-[#FFF8F0]/20 group-hover:text-[#800000]/60 transition-colors text-lg">›</span>
             </Link>
           </motion.div>
         ))}

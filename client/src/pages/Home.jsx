@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import ParticleBackground from '../components/three/ParticleBackground'
 import FloatingEnvelope   from '../components/three/FloatingEnvelope'
@@ -13,12 +13,12 @@ const reveal = (delay = 0) => ({
 })
 
 const COLLECTIONS = [
-  { name: 'Lavender & Longing',  desc: 'For my love who is far away.',                          accent: '#C4A8F0' },
-  { name: 'Midnight Letter',     desc: 'For an intimate, moody, and deep expression of love.',   accent: '#0D1B38' },
+  { name: 'Lavender & Longing',  desc: 'For my love who is far away.',                          accent: '#800000' },
+  { name: 'Midnight Letter',     desc: 'For an intimate, moody, and deep expression of love.',   accent: '#800000' },
   { name: 'Century of Love',     desc: 'For our Anniversary — celebrating the years.',           accent: '#E8A0B4' },
   { name: 'A Year of Heartfelt', desc: 'For a beautiful Birthday.',                              accent: '#FFC1D0' },
-  { name: 'Grace & Lavender',    desc: 'Just thinking of you / Sympathy.',                      accent: '#C4A8F0' },
-  { name: 'A Note of a Note',    desc: 'For my mentor, boss, or colleague.',                    accent: '#8B1A2E' },
+  { name: 'Grace & Lavender',    desc: 'Just thinking of you / Sympathy.',                      accent: '#800000' },
+  { name: 'A Note of a Note',    desc: 'For my mentor, boss, or colleague.',                    accent: '#800000' },
   { name: 'Sunshine Script',     desc: 'For a friend who needs a smile today.',                 accent: '#F0D060' },
   { name: 'Velvet & Vanilla',    desc: 'My Valentine — Special Edition.',                       accent: '#E8A0B4' },
 ]
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <motion.div {...fade}>
 
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
+      {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <ParticleBackground />
 
@@ -43,14 +43,14 @@ export default function Home() {
         <div
           className="absolute inset-0 z-10 pointer-events-none opacity-30"
           style={{
-            backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(200,164,212,0.12) 40px)',
+            backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(128,0,0,0.12) 40px)',
             backgroundSize: '100% 40px',
           }}
         />
 
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center min-h-screen pt-28 pb-20">
 
-          {/* ── Hero copy ── */}
+          {/* â”€â”€ Hero copy â”€â”€ */}
           <motion.div style={{ y: heroY, opacity: heroOp }} className="flex flex-col">
 
             {/* Decorative stamp top-left */}
@@ -66,7 +66,7 @@ export default function Home() {
             >
               Helping you<br />
               <em style={{
-                background: 'linear-gradient(135deg, #C8A4D4 0%, #D4A5A5 60%, #C8A4D4 100%)',
+                background: 'linear-gradient(135deg, #800000 0%, #D4A5A5 60%, #800000 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -98,7 +98,7 @@ export default function Home() {
             </motion.p>
           </motion.div>
 
-          {/* ── 3D Envelope ── */}
+          {/* â”€â”€ 3D Envelope â”€â”€ */}
           <motion.div
             initial={{ opacity: 0, scale: 0.82, y: 24 }}
             animate={{ opacity: 1, scale: 1,    y: 0 }}
@@ -135,7 +135,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ── PHILOSOPHY ──────────────────────────────────────────────── */}
+      {/* â”€â”€ PHILOSOPHY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section-padding sepia-section relative z-10 overflow-hidden">
         {/* Large decorative script in background */}
         <div
@@ -180,19 +180,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SERVICES PREVIEW ────────────────────────────────────────── */}
+      {/* â”€â”€ SERVICES PREVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section-padding bg-midnight relative z-10 overflow-hidden">
         {/* Background texture lines */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.06]"
           style={{
-            backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(200,164,212,0.5) 40px)',
+            backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(128,0,0,0.5) 40px)',
             backgroundSize: '100% 40px',
           }}
         />
         {/* Glow orbs */}
         <div className="absolute top-20 right-20 w-96 h-96 rounded-full opacity-[0.06] blur-3xl pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #C8A4D4, transparent)' }} />
+          style={{ background: 'radial-gradient(circle, #800000, transparent)' }} />
         <div className="absolute bottom-20 left-10 w-64 h-64 rounded-full opacity-[0.05] blur-3xl pointer-events-none"
           style={{ background: 'radial-gradient(circle, #D4A5A5, transparent)' }} />
 
@@ -234,7 +234,7 @@ export default function Home() {
                 transition={{ delay: i * 0.15, duration: 0.8 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className="group p-10 border border-cream/10 hover:border-lavender/50 transition-all duration-500 letter-card relative"
-                style={{ '--tw-shadow': '0 0 40px rgba(200,164,212,0.05)' }}
+                style={{ '--tw-shadow': '0 0 40px rgba(128,0,0,0.05)' }}
               >
                 {/* Corner accent */}
                 <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lavender/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -258,7 +258,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── COLLECTIONS GRID ────────────────────────────────────────── */}
+      {/* â”€â”€ COLLECTIONS GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section-padding relative z-10 bg-cream overflow-hidden">
         {/* Decorative large 'N' watermark */}
         <div className="absolute top-12 right-0 font-display text-[20rem] font-bold text-midnight/[0.018] pointer-events-none select-none leading-none" aria-hidden>
@@ -315,11 +315,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIAL / QUOTE ─────────────────────────────────────── */}
+      {/* â”€â”€ TESTIMONIAL / QUOTE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 px-6 bg-midnight relative z-10 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.07]"
           style={{
-            backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(200,164,212,0.5) 40px)',
+            backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(128,0,0,0.5) 40px)',
             backgroundSize: '100% 40px',
           }}
         />
@@ -344,11 +344,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA BANNER ──────────────────────────────────────────────── */}
+      {/* â”€â”€ CTA BANNER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-28 px-6 relative z-10 overflow-hidden sepia-section">
         <div
           className="absolute inset-0 opacity-25 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 40% 50%, #C8A4D4 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(ellipse at 40% 50%, #800000 0%, transparent 70%)' }}
         />
         <div className="max-w-3xl mx-auto text-center relative">
           <motion.div

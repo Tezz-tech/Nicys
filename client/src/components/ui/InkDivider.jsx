@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 
 /* Calligraphic flourish divider — inject between sections */
 export default function InkDivider({ light = false, className = '' }) {
-  const stroke = light ? 'rgba(255,248,240,0.25)' : 'rgba(200,164,212,0.5)'
-  const fill   = light ? 'rgba(255,248,240,0.4)'  : '#C8A4D4'
+  const stroke = light ? 'rgba(255,248,240,0.25)' : 'rgba(128,0,0,0.5)'
+  const fill   = light ? 'rgba(255,248,240,0.4)'  : '#800000'
 
   return (
     <motion.div

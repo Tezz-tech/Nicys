@@ -22,10 +22,10 @@ export default function Services() {
       <section className="min-h-[60vh] flex items-end bg-midnight relative overflow-hidden pt-28 pb-24 px-6 md:px-16">
         {/* Ruled lines */}
         <div className="absolute inset-0 pointer-events-none opacity-[0.07]"
-          style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(200,164,212,0.5) 40px)', backgroundSize: '100% 40px' }} />
+          style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 39px, rgba(128,0,0,0.5) 40px)', backgroundSize: '100% 40px' }} />
         {/* Glow */}
         <div className="absolute inset-0 opacity-15 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 85% 40%, #C8A4D4 0%, transparent 55%)' }} />
+          style={{ background: 'radial-gradient(ellipse at 85% 40%, #800000 0%, transparent 55%)' }} />
         {/* Large decorative letter */}
         <div className="absolute right-0 bottom-0 font-display text-[22rem] font-bold text-cream/[0.03] pointer-events-none select-none leading-none" aria-hidden>S</div>
 
@@ -66,7 +66,7 @@ export default function Services() {
               className="letter-card p-10 md:p-14 flex flex-col bg-cream hover:shadow-xl transition-shadow duration-500"
             >
               <div className="flex items-start justify-between mb-10">
-                <WaxSeal size={56} color="#C8A4D4" letter="S" />
+                <WaxSeal size={56} color="#800000" letter="S" />
                 <span className="font-body text-[10px] tracking-[0.3em] uppercase font-semibold text-lavender border border-lavender/35 px-3 py-1.5">
                   Scribe's Tier
                 </span>

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
-const PALETTE = [0xC8A4D4, 0xFFF8F0, 0xD4A5A5, 0xF4C2C2, 0xE8D5F0, 0xFFE4E1]
+const PALETTE = [0x800000, 0xFFF8F0, 0xD4A5A5, 0xF4C2C2, 0xA30000, 0xFFE4E1]
 const COUNT   = 220
 
 export default function ParticleBackground() {

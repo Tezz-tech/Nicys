@@ -27,7 +27,7 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0d1627] flex items-center justify-center p-6">
+    <div className="min-h-screen bg-[#0d0000] flex items-center justify-center p-6">
       {/* Background grain */}
       <div className="fixed inset-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")' }} />
@@ -50,7 +50,7 @@ export default function AdminLogin() {
         </div>
 
         {/* Card */}
-        <div className="bg-[#1B2A4A] border border-[#C8A4D4]/15 rounded-sm p-8 shadow-2xl">
+        <div className="bg-[#1a0a0a] border border-[#800000]/30 rounded-sm p-8 shadow-2xl">
           <form onSubmit={submit} className="space-y-5">
             <div>
               <label className="block font-body text-xs font-semibold tracking-widest uppercase text-[#FFF8F0]/50 mb-2">
@@ -62,7 +62,7 @@ export default function AdminLogin() {
                 value={form.email}
                 onChange={e => setForm(p => ({ ...p, email: e.target.value }))}
                 placeholder="admin@nicys.ng"
-                className="w-full bg-[#0d1627] border border-[#C8A4D4]/20 rounded-sm px-4 py-3 font-body text-sm text-[#FFF8F0] placeholder-[#FFF8F0]/25 focus:outline-none focus:border-[#C8A4D4]/60 transition-colors"
+                className="w-full bg-[#0d1627] border border-[#800000]/20 rounded-sm px-4 py-3 font-body text-sm text-[#FFF8F0] placeholder-[#FFF8F0]/25 focus:outline-none focus:border-[#800000]/60 transition-colors"
               />
             </div>
 
@@ -76,7 +76,7 @@ export default function AdminLogin() {
                 value={form.password}
                 onChange={e => setForm(p => ({ ...p, password: e.target.value }))}
                 placeholder="••••••••••"
-                className="w-full bg-[#0d1627] border border-[#C8A4D4]/20 rounded-sm px-4 py-3 font-body text-sm text-[#FFF8F0] placeholder-[#FFF8F0]/25 focus:outline-none focus:border-[#C8A4D4]/60 transition-colors"
+                className="w-full bg-[#0d1627] border border-[#800000]/20 rounded-sm px-4 py-3 font-body text-sm text-[#FFF8F0] placeholder-[#FFF8F0]/25 focus:outline-none focus:border-[#800000]/60 transition-colors"
               />
             </div>
 
@@ -93,7 +93,7 @@ export default function AdminLogin() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-[#C8A4D4] hover:bg-[#b990c7] disabled:opacity-50 text-[#1B2A4A] font-body font-semibold text-sm tracking-widest uppercase py-3 rounded-sm transition-colors mt-2"
+              className="w-full bg-[#800000] hover:bg-[#a30000] disabled:opacity-50 text-[#FFF8F0] font-body font-semibold text-sm tracking-widest uppercase py-3 rounded-sm transition-colors mt-2"
             >
               {loading ? 'Signing in…' : 'Sign In'}
             </button>

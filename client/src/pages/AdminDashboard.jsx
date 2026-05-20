@@ -10,7 +10,7 @@ const STATUS_STYLES = {
   'Received':    'bg-amber-500/15 text-amber-300 border border-amber-400/25',
   'In Progress': 'bg-blue-500/15 text-blue-300 border border-blue-400/25',
   'Complete':    'bg-emerald-500/15 text-emerald-300 border border-emerald-400/25',
-  'Delivered':   'bg-[#C8A4D4]/15 text-[#C8A4D4] border border-[#C8A4D4]/25',
+  'Delivered':   'bg-[#800000]/15 text-[#800000] border border-[#800000]/25',
 }
 
 const STATUS_OPTIONS = ['', 'Received', 'In Progress', 'Complete', 'Delivered']
@@ -28,7 +28,7 @@ function StatCard({ label, value, accent, sub }) {
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-[#1B2A4A] border border-[#C8A4D4]/12 rounded-sm p-5"
+      className="bg-[#1B2A4A] border border-[#800000]/12 rounded-sm p-5"
     >
       <p className="font-body text-xs font-semibold tracking-widest uppercase text-[#FFF8F0]/35 mb-3">{label}</p>
       <p className={`font-display text-4xl font-semibold ${accent || 'text-[#FFF8F0]'}`}>{value ?? '—'}</p>
@@ -57,12 +57,12 @@ function OverviewView({ stats, onViewOrder }) {
         <StatCard label="Total Orders"  value={stats.total}      />
         <StatCard label="Received"      value={stats.received}   accent="text-amber-300"    />
         <StatCard label="In Progress"   value={stats.inProgress} accent="text-blue-300"     />
-        <StatCard label="Delivered"     value={stats.delivered}  accent="text-[#C8A4D4]"    />
+        <StatCard label="Delivered"     value={stats.delivered}  accent="text-[#800000]"    />
       </div>
 
       <div>
         <h3 className="font-body text-xs font-semibold tracking-widest uppercase text-[#FFF8F0]/35 mb-4">Recent Orders</h3>
-        <div className="bg-[#1B2A4A] border border-[#C8A4D4]/12 rounded-sm overflow-hidden">
+        <div className="bg-[#1B2A4A] border border-[#800000]/12 rounded-sm overflow-hidden">
           {stats.recent?.length === 0 && (
             <p className="font-body text-sm text-[#FFF8F0]/30 p-6">No orders yet.</p>
           )}
@@ -73,13 +73,13 @@ function OverviewView({ stats, onViewOrder }) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.05 }}
               onClick={() => onViewOrder(o.orderId)}
-              className="w-full flex items-center gap-4 px-5 py-4 border-b border-[#C8A4D4]/8 last:border-0 hover:bg-[#C8A4D4]/5 transition-colors text-left group"
+              className="w-full flex items-center gap-4 px-5 py-4 border-b border-[#800000]/8 last:border-0 hover:bg-[#800000]/5 transition-colors text-left group"
             >
-              <span className="font-body text-xs font-bold tracking-wider text-[#C8A4D4] w-32 shrink-0">{o.orderId}</span>
+              <span className="font-body text-xs font-bold tracking-wider text-[#800000] w-32 shrink-0">{o.orderId}</span>
               <span className="font-body text-sm text-[#FFF8F0]/70 flex-1 truncate">{o.senderName}</span>
               <span className="font-body text-sm text-[#FFF8F0]/40 hidden md:block">→ {o.recipientName}</span>
               <StatusBadge status={o.status} />
-              <span className="text-[#FFF8F0]/20 group-hover:text-[#C8A4D4]/50 transition-colors ml-2">›</span>
+              <span className="text-[#FFF8F0]/20 group-hover:text-[#800000]/50 transition-colors ml-2">›</span>
             </motion.button>
           ))}
         </div>
@@ -130,12 +130,12 @@ function OrdersView({ onSelect }) {
           placeholder="Search by ID, name or email…"
           value={search}
           onChange={e => { setSearch(e.target.value); setPage(1) }}
-          className="flex-1 bg-[#1B2A4A] border border-[#C8A4D4]/20 rounded-sm px-4 py-2.5 font-body text-sm text-[#FFF8F0]/80 placeholder-[#FFF8F0]/25 focus:outline-none focus:border-[#C8A4D4]/50 transition-colors"
+          className="flex-1 bg-[#1B2A4A] border border-[#800000]/20 rounded-sm px-4 py-2.5 font-body text-sm text-[#FFF8F0]/80 placeholder-[#FFF8F0]/25 focus:outline-none focus:border-[#800000]/50 transition-colors"
         />
         <select
           value={statusFilter}
           onChange={e => { setStatus(e.target.value); setPage(1) }}
-          className="bg-[#1B2A4A] border border-[#C8A4D4]/20 rounded-sm px-4 py-2.5 font-body text-sm text-[#FFF8F0]/70 focus:outline-none focus:border-[#C8A4D4]/50 transition-colors"
+          className="bg-[#1B2A4A] border border-[#800000]/20 rounded-sm px-4 py-2.5 font-body text-sm text-[#FFF8F0]/70 focus:outline-none focus:border-[#800000]/50 transition-colors"
         >
           {STATUS_OPTIONS.map(s => (
             <option key={s} value={s}>{s || 'All Statuses'}</option>
@@ -149,9 +149,9 @@ function OrdersView({ onSelect }) {
       </p>
 
       {/* Table */}
-      <div className="bg-[#1B2A4A] border border-[#C8A4D4]/12 rounded-sm overflow-hidden">
+      <div className="bg-[#1B2A4A] border border-[#800000]/12 rounded-sm overflow-hidden">
         {/* Header */}
-        <div className="hidden md:grid grid-cols-[140px_1fr_1fr_120px_100px_36px] gap-4 px-5 py-3 border-b border-[#C8A4D4]/12 bg-[#0d1627]/40">
+        <div className="hidden md:grid grid-cols-[140px_1fr_1fr_120px_100px_36px] gap-4 px-5 py-3 border-b border-[#800000]/12 bg-[#0d1627]/40">
           {['Order ID', 'Customer', 'Recipient', 'Date', 'Status', ''].map(h => (
             <span key={h} className="font-body text-[10px] font-semibold tracking-widest uppercase text-[#FFF8F0]/30">{h}</span>
           ))}
@@ -168,9 +168,9 @@ function OrdersView({ onSelect }) {
             animate={{ opacity: 1 }}
             transition={{ delay: i * 0.03 }}
             onClick={() => onSelect(o)}
-            className="w-full grid md:grid-cols-[140px_1fr_1fr_120px_100px_36px] gap-4 px-5 py-4 border-b border-[#C8A4D4]/8 last:border-0 hover:bg-[#C8A4D4]/5 transition-colors text-left group items-center"
+            className="w-full grid md:grid-cols-[140px_1fr_1fr_120px_100px_36px] gap-4 px-5 py-4 border-b border-[#800000]/8 last:border-0 hover:bg-[#800000]/5 transition-colors text-left group items-center"
           >
-            <span className="font-body text-xs font-bold tracking-wider text-[#C8A4D4]">{o.orderId}</span>
+            <span className="font-body text-xs font-bold tracking-wider text-[#800000]">{o.orderId}</span>
             <div className="min-w-0">
               <p className="font-body text-sm text-[#FFF8F0]/80 truncate">{o.senderName}</p>
               <p className="font-body text-xs text-[#FFF8F0]/35 truncate">{o.senderEmail}</p>
@@ -181,7 +181,7 @@ function OrdersView({ onSelect }) {
             </div>
             <span className="font-body text-xs text-[#FFF8F0]/40">{fmt(o.createdAt)}</span>
             <StatusBadge status={o.status} />
-            <span className="text-[#FFF8F0]/20 group-hover:text-[#C8A4D4]/60 transition-colors text-lg">›</span>
+            <span className="text-[#FFF8F0]/20 group-hover:text-[#800000]/60 transition-colors text-lg">›</span>
           </motion.button>
         ))}
       </div>
@@ -233,7 +233,7 @@ function ContactsView() {
     <div className="space-y-3">
       <p className="font-body text-xs text-[#FFF8F0]/30">{loading ? 'Loading…' : `${contacts.length} message${contacts.length !== 1 ? 's' : ''}`}</p>
       {contacts.length === 0 && !loading && (
-        <p className="font-body text-sm text-[#FFF8F0]/30 p-8 text-center bg-[#1B2A4A] border border-[#C8A4D4]/12 rounded-sm">No contact messages yet.</p>
+        <p className="font-body text-sm text-[#FFF8F0]/30 p-8 text-center bg-[#1B2A4A] border border-[#800000]/12 rounded-sm">No contact messages yet.</p>
       )}
       {contacts.map((c, i) => (
         <motion.div
@@ -241,14 +241,14 @@ function ContactsView() {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.04 }}
-          className="bg-[#1B2A4A] border border-[#C8A4D4]/12 rounded-sm overflow-hidden"
+          className="bg-[#1B2A4A] border border-[#800000]/12 rounded-sm overflow-hidden"
         >
           <button
             onClick={() => setExpanded(expanded === c._id ? null : c._id)}
-            className="w-full flex items-center gap-4 px-5 py-4 hover:bg-[#C8A4D4]/5 transition-colors text-left"
+            className="w-full flex items-center gap-4 px-5 py-4 hover:bg-[#800000]/5 transition-colors text-left"
           >
-            <div className="w-9 h-9 rounded-full bg-[#C8A4D4]/15 flex items-center justify-center shrink-0">
-              <span className="font-display text-sm font-semibold text-[#C8A4D4]">{c.name[0].toUpperCase()}</span>
+            <div className="w-9 h-9 rounded-full bg-[#800000]/15 flex items-center justify-center shrink-0">
+              <span className="font-display text-sm font-semibold text-[#800000]">{c.name[0].toUpperCase()}</span>
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-body text-sm font-semibold text-[#FFF8F0]/80">{c.name}</p>
@@ -265,11 +265,11 @@ function ContactsView() {
                 exit={{ height: 0 }}
                 className="overflow-hidden"
               >
-                <div className="px-5 pb-5 pt-1 border-t border-[#C8A4D4]/8">
+                <div className="px-5 pb-5 pt-1 border-t border-[#800000]/8">
                   <p className="font-body text-sm text-[#FFF8F0]/70 leading-relaxed whitespace-pre-wrap">{c.message}</p>
                   <a
                     href={`mailto:${c.email}`}
-                    className="inline-block mt-4 font-body text-xs font-semibold tracking-widest uppercase text-[#C8A4D4] hover:text-[#b990c7] transition-colors"
+                    className="inline-block mt-4 font-body text-xs font-semibold tracking-widest uppercase text-[#800000] hover:text-[#a30000] transition-colors"
                   >
                     Reply via email →
                   </a>
@@ -323,15 +323,15 @@ export default function AdminDashboard() {
       {/* ── Sidebar ── */}
       <aside className={`
         fixed lg:static inset-y-0 left-0 z-30
-        w-60 bg-[#1B2A4A] border-r border-[#C8A4D4]/12
+        w-60 bg-[#1B2A4A] border-r border-[#800000]/12
         flex flex-col transition-transform duration-300
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo */}
-        <div className="px-6 py-7 border-b border-[#C8A4D4]/12">
+        <div className="px-6 py-7 border-b border-[#800000]/12">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full border border-[#C8A4D4]/30 bg-[#C8A4D4]/10 flex items-center justify-center">
-              <span className="font-display text-base font-semibold text-[#C8A4D4]">N</span>
+            <div className="w-9 h-9 rounded-full border border-[#800000]/30 bg-[#800000]/10 flex items-center justify-center">
+              <span className="font-display text-base font-semibold text-[#800000]">N</span>
             </div>
             <div>
               <p className="font-display text-base font-semibold text-[#FFF8F0]">Nicys</p>
@@ -348,7 +348,7 @@ export default function AdminDashboard() {
               onClick={() => { setView(id); setSidebarOpen(false) }}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-sm font-body text-sm transition-all ${
                 view === id
-                  ? 'bg-[#C8A4D4]/15 text-[#C8A4D4] font-semibold'
+                  ? 'bg-[#800000]/15 text-[#800000] font-semibold'
                   : 'text-[#FFF8F0]/45 hover:bg-[#FFF8F0]/5 hover:text-[#FFF8F0]/70'
               }`}
             >
@@ -364,7 +364,7 @@ export default function AdminDashboard() {
         </nav>
 
         {/* Bottom */}
-        <div className="px-3 py-5 border-t border-[#C8A4D4]/12 space-y-1">
+        <div className="px-3 py-5 border-t border-[#800000]/12 space-y-1">
           <a
             href="/"
             target="_blank"
@@ -387,7 +387,7 @@ export default function AdminDashboard() {
       {/* ── Main ── */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top bar */}
-        <header className="flex items-center gap-4 px-6 py-4 border-b border-[#C8A4D4]/12 bg-[#0d1627]/80 backdrop-blur-sm shrink-0 sticky top-0 z-10">
+        <header className="flex items-center gap-4 px-6 py-4 border-b border-[#800000]/12 bg-[#0d1627]/80 backdrop-blur-sm shrink-0 sticky top-0 z-10">
           {/* Mobile menu */}
           <button
             onClick={() => setSidebarOpen(true)}
